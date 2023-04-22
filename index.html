@@ -4,37 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="estilos/style.css">
-    <link rel="stylesheet" href="estilos/tmenores.css" media="screen and (max-width: 858px)">
-    <link rel="stylesheet" href="estilos/tcelulares.css" media="screen and (max-width: 542px)">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo/stylecadastro.css">
 </head>
 <body>
-    <header>
-        <h1>Streamers famosos</h1>
-    </header>
-
-    <main>
-        <h2>Siga a lista de alguns dos streamers famosos</h2>
-
-        <ul type="disc">
-            <li><a href="">Alanzoka</a></li>
-            <li><a href="">Casemiro</a></li>
-            <li><a href="">Loud Coringa</a></li>
-            <li><a href="">Cellbit</a></li>
-            <li><a href="">Gaules</a></li>
-            <li><a href="">Felps</a></li>
-        </ul>
-
-        <p>Clique em um dos nomes dos streamer que deseja saber sobre...</p>
-
-        <div>
-            <img src="twich-imagem.png" alt="manha">
-            <p id="t">TWITCH</p>
-        </div>
-
-    </main>
+    <h1>Preencha algumas pequenas informações antes:</h1>
+    <p class="obs">Apenas testando o que aprendi kkkkk</p> <br>
+    <p class="obs">Esse site consegue se adaptar ao uso de celular, tablets e computadores. Cada um o site fica de uma forma. <br> Sendo assim, provavelmente se você ver este site pelo seu celular, logicamente, estará diferente de como estaria no computador.</p> <br>
+    <p>Qual o seu nome?</p>
+    <div><input type="text" name="txtn" id="txtn"></div>
+    <p>Qual a sua idade?</p>
+    <div><input type="number" name="idade" id="idade"></div>
+    <div><input type="button" value="Enviar" onclick="enviar()" id="botão"></div>
 
 
+    <div id="res"></div>
+
+
+    <script>
+
+        let nome = document.getElementById('txtn')
+        let res = document.getElementById('res')
+        let idade = document.getElementById('idade')
+
+        function enviar(){
+ 
+            let n = String(nome.value)
+            let i = String(idade.value)
+            
+
+            if(n == '' || i == ''){
+                alert('Por favor, insira os dados pedidos')
+            } else{
+                res.innerHTML = `<p class= 'resultado'>Olá ${n}! Tudo bem? Você tem ${i} correto? Agradeço as informações!<br> Enfim... Clique em "entrar" logo abaixo, para poder visitar o site.</p> <p class= 'resultado'><a href="página-inicial.html" id= 'link'>ENTRAR</a></p>`
+            }
+        }
+
+    </script>
 </body>
 </html>
